@@ -1,6 +1,6 @@
 {
   "name": "capacitor-foreground-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Capacitor Android Foreground Service",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -25,7 +25,11 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "android",
+    "foreground service",
+    "foreground-service",
+    "foregroundservice"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
