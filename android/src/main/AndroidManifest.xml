@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.paschalis.capfgservice">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <application>
+        <service
+            android:name=".CapacitorForegroundService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+
+</manifest>
