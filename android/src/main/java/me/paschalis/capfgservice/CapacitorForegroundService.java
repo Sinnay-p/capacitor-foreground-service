@@ -28,12 +28,6 @@ public class CapacitorForegroundService extends Service {
         return START_STICKY;
     }
 
-    public void endService(Intent intent) {
-        stopService(intent);
-        stopForeground(true);
-        stopSelf();
-    }
-
     public String echo(String value) {
         Log.i("Echo", value);
         return value;
