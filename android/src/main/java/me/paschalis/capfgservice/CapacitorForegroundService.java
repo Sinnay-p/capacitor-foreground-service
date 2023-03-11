@@ -93,7 +93,7 @@ public class CapacitorForegroundService extends Service {
                 NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
                     "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_DEFAULT
+                    importance
                 );
                 serviceChannel.setDescription("Enables background processing.");
                 NotificationManager manager = getSystemService(NotificationManager.class);
