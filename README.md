@@ -59,9 +59,8 @@ CapacitorForegroundService.startService({title:"Foreground Service",description:
 CapacitorForegroundService.stopService()
 ```
 
-```
-![Service Running](service.png)
-```
+
+![Service Running](https://github.com/Sinnay-p/capacitor-foreground-service/blob/master/service.png?raw=true )
 
 # TODO
 

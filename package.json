@@ -1,6 +1,6 @@
 {
   "name": "capacitor-foreground-service",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Capacitor Android Foreground Service",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
