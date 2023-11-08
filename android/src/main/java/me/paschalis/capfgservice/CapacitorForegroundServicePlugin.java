@@ -14,6 +14,15 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class CapacitorForegroundServicePlugin extends Plugin {
 
     private CapacitorForegroundService implementation = new CapacitorForegroundService();
+    private Boolean runningService = false;
+
+    @Override
+    public void handleOnDestroy() {
+        super.handleOnDestroy();
+        if (runningService) {
+            stopServiceForeground();
+        }
+    }
 
     @PluginMethod
     public void echo(PluginCall call) {
@@ -40,6 +49,7 @@ public class CapacitorForegroundServicePlugin extends Plugin {
             // .putExtra("id", args.getString(4));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             activity.getApplicationContext().startForegroundService(intent);
+            runningService = true;
         }
         JSObject result = new JSObject();
         result.put("resolved",true);
@@ -48,12 +58,17 @@ public class CapacitorForegroundServicePlugin extends Plugin {
 
     @PluginMethod
     public void stopService(PluginCall call) {
+        stopServiceForeground();
+        runningService = false;
+        call.resolve();
+    }
+
+    private void stopServiceForeground() {
         Activity activity = getActivity();
-        Intent intent = new Intent(activity,CapacitorForegroundService.class);
+        Intent intent = new Intent(activity, CapacitorForegroundService.class);
         intent.setAction("stop");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             activity.getApplicationContext().startForegroundService(intent);
         }
-        call.resolve();
     }
 }
